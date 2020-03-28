@@ -2,8 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import styled from 'styled-components';
 import { Button } from 'semantic-ui-react';
-import { Link, withRouter } from 'react-router-dom';
-import { CatConsumer, } from "./Category";
+import { Link } from 'react-router-dom';
+
 
 export default class Card extends React.Component {
     state = {
@@ -40,7 +40,7 @@ export default class Card extends React.Component {
             return cards.map(card => (
                 <CardStyled>
                     <h2>{card.answer}</h2>
-                    <Button color='blue' onClick={this.handleClick}>question</Button>
+                    <Button color='blue' onClick={this.handleClick}>Question</Button>
                 </CardStyled>
             ))
         }

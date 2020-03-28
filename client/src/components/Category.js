@@ -21,10 +21,10 @@ export default class Category extends React.Component {
     renderCategories = () => {
         const { categories } = this.state
         return categories.map(category => (
-            <ColumnCon>
-                <CategoryStyle key={`category${category.id}`}>
+            <ColumnCon key={`category${category.id}`}>
+                <CategoryStyle>
                     <h1>{category.name}</h1>
-                    <Card category={this.state.categories} />
+                    <Card categoryId={category.id} />
                 </CategoryStyle>
             </ColumnCon>
         ))
@@ -32,16 +32,15 @@ export default class Category extends React.Component {
 
     render() {
         return (
-            <>
                 <CategoryCon>
                     {this.renderCategories()}
                 </CategoryCon>
-                <CatContext.Provider value={{
-                    ...this.state,
-                }}>
-                    {this.props.children}
-                </CatContext.Provider>
-            </>
+            //     {/* <CatContext.Provider value={{
+            //         ...this.state,
+            //     }}>
+            //         {this.props.children}
+            //     </CatContext.Provider>
+            // </> */}
         )
     }
 }
