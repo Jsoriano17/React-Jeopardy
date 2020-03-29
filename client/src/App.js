@@ -1,9 +1,9 @@
 import React, { Fragment, } from 'react';
 import { Route, Switch, } from 'react-router-dom';
 import { Container, } from "semantic-ui-react";
-import Home from './components/Home';
-import NoMatch from './components/NoMatch';
-// import Navbar from './components/Navbar';
+import Home from './components/Home'
+import CardPage from './components/CardPage'
+import './App.css';
 
 const App = () => (
   <Fragment>
@@ -12,6 +12,7 @@ const App = () => (
       <Switch>
         <Route exact path='/' component={Home} />
         <Route component={NoMatch} />
+        <Route exact path='/card' component={CardPage} />
       </Switch>
     </Container>
   </Fragment>
