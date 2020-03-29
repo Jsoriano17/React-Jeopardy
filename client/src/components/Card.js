@@ -10,7 +10,7 @@ export default class Card extends React.Component {
     }
     componentDidMount() {
         console.log(this.props)
-       const { categoryId } = this.props
+        const { categoryId } = this.props
 
         axios.get(`/api/categories/${categoryId}/cards`).then(res => {
             this.setState({ cards: res.data, })
@@ -35,7 +35,10 @@ export default class Card extends React.Component {
     render() {
         return (
             <div>
-                <Link to='/card' onClick={this.handleClick}>{this.renderCardPoints()}</Link>
+                <Link to={{
+                    pathname: '/card',
+                    state: { linkState: this.props }
+                }} onClick={this.handleClick}>{this.renderCardPoints()}</Link>
             </div>
 
         )
